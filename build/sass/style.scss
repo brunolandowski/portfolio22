@@ -32,6 +32,34 @@ $url_4: url(hinted-FivoSansModern-Medium.svg#FivoSansModern-Medium);
 
 @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
 
+html {
+	height: 100%;
+}
+
+#grid {
+	position: fixed;
+ 	display: grid;
+ 	grid-template-columns: repeat(6, 1fr);
+ 
+ 	top:0;
+  	grid-gap: 50px;
+  	height: 100%;
+  	width:calc(100% - 200px);
+  	margin-left:100px;
+}
+
+#col1,
+#col2,
+#col3,
+#col4,
+#col5,
+#col6
+{
+	height: 100%;
+	border:1px dashed rgba(255, 255, 255, 0.1);
+	
+} 
+
 #butter {
 	position: fixed;
 	right:100px;
@@ -52,19 +80,6 @@ $url_4: url(hinted-FivoSansModern-Medium.svg#FivoSansModern-Medium);
 
 }
 
-#loading {
-	background:$color_black_pearl_approx;
-	width:100%;
-	height:100%;
-	position: fixed;
-	top:0;
-		img {
-				top:0;
-				height:50%;
-				float: right;
-				position: fixed;
-			}
-}
 
 
 .press {
@@ -95,11 +110,17 @@ a.pressure {
 
 
 body {
-
+	height:100%;
 	transition: background .3s ease-out;
 	color: $white;
 	font-family: $font_0;
 	background: $color_black_pearl_approx;
+
+	#wrap {
+		top:calc(50% - 28px);
+		position: relative
+
+	}
 	#container {
 		margin:300px 0;
 	}
@@ -140,9 +161,9 @@ body {
   			}
 		}
 		&#intro {
-			margin-top:25%;
+		
 			h1 {
-				font-size:30px;
+				font-size:40px;
 			}
 			
 		}
@@ -159,12 +180,12 @@ body {
 					}
 					h2 {
 						vertical-align: top;
-						font-size: 30px;
+						font-size: 40px;
 						margin-bottom: 20px;
 					}
 					p {
 						vertical-align: top;
-						font-size: 30px;
+						font-size: 40px;
 						@media screen and (max-width: $middle) {
     						font-size:20px;
   						}
@@ -174,11 +195,10 @@ body {
 
 			}
 			#col_3 {
-				width:calc(50% - 50px);
+				width:calc(50% - 25px);
 				margin:100px 0;
 				display: grid;
 				grid-template-columns: repeat(3, 1fr);
-				
 				grid-column-gap: 50px;
   				
 				p {
@@ -186,7 +206,7 @@ body {
 						color:white;
 					}
 					text-decoration: underline;
-					font-size: 30px;
+					font-size: 40px;
 				}
 			}
 		
@@ -208,8 +228,7 @@ body {
 			transform: translate(-50%, 50%) rotate(-20deg);
 			transition: all .3s ease-out;
 			opacity:0;
-			background:red;
-			padding:120px;
+		
 		}
 		
 		.content {
@@ -240,7 +259,7 @@ body {
 		h3 {
 			transition: all .3s ease-out;
 			margin-left: 20px;
-			font-size: 20px;
+			font-size: 40px;
 			@media screen and (max-width: $middle) {
     			font-size:20px;
   			}

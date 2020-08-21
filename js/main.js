@@ -2,6 +2,12 @@
 Google SpreadSheet
 */
 $(document).ready(function() {
+  $('.rumble').jrumble();
+    $('.rumble').hover(function(){
+  $(this).trigger('startRumble');
+}, function(){
+  $(this).trigger('stopRumble');
+});
       
       var tableArray = [];
       /* First parameter in .getJSON method is published google spreadsheet's modified link for getting data formed with JSON. Tricky key is putting key between link template over here : https://spreadsheets.google.com/feeds/list/PUT-KEY_HERE/od6/public/values?alt=json  | You might be get key when you published your data spreadsheet. The key inside the URL. After getting JSON object you can investigate which key represent data. In this example json.feed.entry is an array that includes my data. Your solution should look similar like that.
@@ -22,7 +28,7 @@ $(document).ready(function() {
        .done(function() {
         console.log( "second success" );
 
-        $("#loading").fadeOut(1000);
+
           
        
 
@@ -30,6 +36,9 @@ $(document).ready(function() {
             strings: ['Molo — Interactive Designer based in Paris'],
             typeSpeed: 40,
             showCursor: false,
+            onStringTyped: function(){
+             
+            }
           };
 
           var typed = new Typed('#intro h1', options);
