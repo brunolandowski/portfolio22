@@ -4,33 +4,40 @@ html(lang="en")
 		title= Portfolio
 		meta(charset="utf-8")
 		meta(name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1")
+		meta(name="theme-color" content="black" media="(prefers-color-scheme: light)")
+		meta(name="theme-color" content="black" media="(prefers-color-scheme: dark)")
 		link(rel="icon" href="")
 		link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css")
 		link(rel="stylesheet" href="css/style.css")
 
 
 	body
-		
-		#grid
-			- for ( i=1; i <= 6 ; i++ )
-				div( id="col" + i )
-		
+		#more
+			|+
+		#remove
+			|reset	
+		#canvas
+		script(src="js/proto.js")
+		script(src="js/lib2d.js")
+		script(src="js/balls.js")
+
 		#wrap
 			section#intro
 				h1
 
-					
-			section#wrap
+			section#works
 				div#container
+					h1 Selected works
 
 			section#info
 				include ./about.jade
 			
 
-			include ./header.jade
+			
 			include ./footer.jade
 
 		script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js")
+		script(src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js")
 		script(src="https://cdnjs.cloudflare.com/ajax/libs/jrumble/1.3.0/jquery.jrumble.min.js")
 		script(src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11")
 		script(src="https://cdnjs.cloudflare.com/ajax/libs/jrumble/1.3.0/jquery.jrumble.js")
